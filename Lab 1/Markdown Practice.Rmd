@@ -1,0 +1,23 @@
+---
+title: "RMarkdown Practice"
+author: "Gurshan Rai"
+date: "1/6/2021"
+output: 
+  html_document: 
+    keep_md: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+```{r message=FALSE, warning=FALSE}
+#install.packages("tidyverse")
+library("tidyverse")
+
+
+```{r}
+ggplot(mtcars, aes(x = factor(cyl))) +
+    geom_bar()
