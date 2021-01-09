@@ -1,6 +1,6 @@
 ---
 title: "Data Structures: Vectors and Data Matrices"
-date: "2021-01-07"
+date: "2021-01-09"
 output:
   html_document: 
     theme: spacelab
@@ -43,6 +43,14 @@ A character vector. Characters always have quotes and may be referred to as "str
 
 ```r
 days_of_the_week <- c("Monday", "Tuesday", "Wednesday", "Thrusday", "Friday", "Saturday", "Sunday")
+is.character(days_of_the_week)
+```
+
+```
+## [1] TRUE
+```
+
+```r
 days_of_the_week
 ```
 
@@ -71,11 +79,11 @@ my_vector_sequence
 We can use `[]` to pull out elements in a vector. We just need to specify their position in the vector; i.e. day 3 is Wednesday.
 
 ```r
-days_of_the_week[8]
+days_of_the_week[5]
 ```
 
 ```
-## [1] NA
+## [1] "Friday"
 ```
 
 ## Practice

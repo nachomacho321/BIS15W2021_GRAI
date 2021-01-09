@@ -37,6 +37,7 @@ is.numeric(my_vector)
 A character vector. Characters always have quotes and may be referred to as "strings".
 ```{r}
 days_of_the_week <- c("Monday", "Tuesday", "Wednesday", "Thrusday", "Friday", "Saturday", "Sunday")
+is.character(days_of_the_week)
 days_of_the_week
 ```
 
@@ -49,7 +50,7 @@ my_vector_sequence
 ## Identifying vector elements
 We can use `[]` to pull out elements in a vector. We just need to specify their position in the vector; i.e. day 3 is Wednesday.
 ```{r}
-days_of_the_week[8]
+days_of_the_week[5]
 ```
 
 ## Practice
