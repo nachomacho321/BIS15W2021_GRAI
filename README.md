@@ -1,4 +1,4 @@
 # BIS15W2021_GRAI
 
 
-Hello. My name is [Gurshan Rai](mailto:gsrai@ucdavis.edu). I am a Freshman Undeclared Life Sciences student at the University of California at Davis from Novato, California. Please email anytime if you wish to contact me. I will respond in due time.
+Hello. My name is [Gurshan Rai](mailto:gsrai@ucdavis.edu).  Please email if you any questions about the work I have listed on this page!
