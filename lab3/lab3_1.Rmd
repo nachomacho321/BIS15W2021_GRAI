@@ -121,6 +121,7 @@ hbirds <- cbind(hbirds, neighborhood)
 hbirds
 ```
 
+
 ## Writing Data to File
 We should save our hbirds data frame so we can use it again later! There are many ways to save data in R, here we write our data frame to a csv file. We use  `row.names = FALSE` to avoid row numbers from printing out. 
 ```{r}
@@ -150,7 +151,10 @@ hspring
 
 2. Change the column titled `name` to `scientist`, leave the other column names the same. Print out the data frame names.  
 ```{r}
-hspring <-data.frame(temp_c = temp, scientist = name,spring)
+
+
+names(hspring)
+hspring <- data.frame(temp_c=temp, scientist = name, spring)
 hspring
 ```
 

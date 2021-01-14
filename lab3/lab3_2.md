@@ -1,6 +1,6 @@
 ---
 title: "Importing Data Frames"
-date: "2021-01-12"
+date: "2021-01-13"
 output:
   html_document: 
     theme: spacelab
@@ -139,15 +139,6 @@ levels(hot_springs$scientist)
 
 The data are from: Gaeta J., G. Sass, S. Carpenter. 2012. Biocomplexity at North Temperate Lakes LTER: Coordinated Field Studies: Large Mouth Bass Growth 2006. Environmental Data Initiative.  [link](https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-ntl&identifier=267)  
 
-```r
-##doesnt work
-setwd("C:/Users/Gurshan Rai/OneDrive/Desktop/GitHub/BIS15W2021_GRAI/lab3/data")
-getwd()
-```
-
-```
-## [1] "C:/Users/Gurshan Rai/OneDrive/Desktop/GitHub/BIS15W2021_GRAI/lab3/data"
-```
 
 ```r
 getwd()
@@ -337,13 +328,19 @@ tail(fish, n = 10)
 `table()` is useful when you have a limited number of categorical variables. It produces fast counts of the number of observations in a variable. We will come back to this later... 
 
 ```r
-#table(fish$lakeid)
+table(fish$lakeid)
+```
+
+```
+## 
+##  AL  AR  BO  BR  CR  DY  FD  JN  LC  LJ  LR LSG  MN  RD  UB  WS 
+## 383 262 197 291 343 355 302 238 173 181 292 143 293 135 191 254
 ```
 
 We can also click on the `fish` data frame in the Environment tab or type View(fish).
 
 ```r
-#View(fish)
+View(fish)
 ```
 
 ## Subset

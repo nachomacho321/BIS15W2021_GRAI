@@ -1,6 +1,6 @@
 ---
 title: "Data Frames"
-date: "2021-01-12"
+date: "2021-01-13"
 output:
   html_document: 
     theme: spacelab
@@ -222,6 +222,7 @@ hbirds
 ## 4 Female       3.6       3.9 Scenic Heights
 ```
 
+
 ## Writing Data to File
 We should save our hbirds data frame so we can use it again later! There are many ways to save data in R, here we write our data frame to a csv file. We use  `row.names = FALSE` to avoid row numbers from printing out. 
 
@@ -270,7 +271,15 @@ hspring
 2. Change the column titled `name` to `scientist`, leave the other column names the same. Print out the data frame names.  
 
 ```r
-hspring <-data.frame(temp_c = temp, scientist = name,spring)
+names(hspring)
+```
+
+```
+## [1] "temp_c" "name"   "spring"
+```
+
+```r
+hspring <- data.frame(temp_c=temp, scientist = name, spring)
 hspring
 ```
 

@@ -10,7 +10,7 @@
 
 
 
-<meta name="date" content="2021-01-12" />
+<meta name="date" content="2021-01-13" />
 
 <title>Importing Data Frames</title>
 
@@ -1544,7 +1544,7 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">Importing Data Frames</h1>
-<h4 class="date">2021-01-12</h4>
+<h4 class="date">2021-01-13</h4>
 
 </div>
 
@@ -1630,10 +1630,6 @@ class(hot_springs$scientist)</code></pre>
 <li>In your lab 3 folder there is another folder titled <code>data</code>. Inside the <code>data</code> folder there is a <code>.csv</code> titled <code>Gaeta_etal_CLC_data.csv</code>. Open this data and store them as an object called <code>fish</code>.</li>
 </ol>
 <p>The data are from: Gaeta J., G. Sass, S. Carpenter. 2012. Biocomplexity at North Temperate Lakes LTER: Coordinated Field Studies: Large Mouth Bass Growth 2006. Environmental Data Initiative. <a href="https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-ntl&amp;identifier=267">link</a></p>
-<pre class="r"><code>##doesnt work
-setwd(&quot;C:/Users/Gurshan Rai/OneDrive/Desktop/GitHub/BIS15W2021_GRAI/lab3/data&quot;)
-getwd()</code></pre>
-<pre><code>## [1] &quot;C:/Users/Gurshan Rai/OneDrive/Desktop/GitHub/BIS15W2021_GRAI/lab3/data&quot;</code></pre>
 <pre class="r"><code>getwd()</code></pre>
 <pre><code>## [1] &quot;C:/Users/Gurshan Rai/OneDrive/Desktop/GitHub/BIS15W2021_GRAI/lab3&quot;</code></pre>
 <pre class="r"><code>fish &lt;- readr::read_csv(&quot;data/Gaeta_etal_CLC_data.csv&quot;)</code></pre>
@@ -1733,9 +1729,12 @@ nrow(fish) </code></pre>
 ##  9 WS         180 2            403            2.03        11.0
 ## 10 WS         180 1            403            1.19        11.0</code></pre>
 <p><code>table()</code> is useful when you have a limited number of categorical variables. It produces fast counts of the number of observations in a variable. We will come back to this later…</p>
-<pre class="r"><code>#table(fish$lakeid)</code></pre>
+<pre class="r"><code>table(fish$lakeid)</code></pre>
+<pre><code>## 
+##  AL  AR  BO  BR  CR  DY  FD  JN  LC  LJ  LR LSG  MN  RD  UB  WS 
+## 383 262 197 291 343 355 302 238 173 181 292 143 293 135 191 254</code></pre>
 <p>We can also click on the <code>fish</code> data frame in the Environment tab or type View(fish).</p>
-<pre class="r"><code>#View(fish)</code></pre>
+<pre class="r"><code>View(fish)</code></pre>
 </div>
 <div id="subset" class="section level2">
 <h2>Subset</h2>
