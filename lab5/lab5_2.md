@@ -1,6 +1,6 @@
 ---
 title: "dplyr Superhero"
-date: "2021-01-20"
+date: "2021-01-21"
 output:
   html_document: 
     theme: spacelab
@@ -729,7 +729,7 @@ corrected_superhero_info %>%
 ```
 
 ## Height to Weight Ratio
-13. It's easy to be strong when you are heavy and tall, but who is heavy and short? Which superheros have the highest height to weight ratio?
+13. It's easy to be strong when you are heavy and tall, but who is heavy and short? Which superheros have the lowest height to weight ratio?
 
 ```r
 corrected_superhero_info %>%
