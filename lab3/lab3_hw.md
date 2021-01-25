@@ -1,7 +1,7 @@
 ---
 title: "Lab 3 Homework"
 author: "Gurshan Rai"
-date: "2021-01-13"
+date: "2021-01-24"
 output:
   html_document: 
     theme: spacelab
@@ -26,18 +26,11 @@ The data is takn from  V. M. Savage and G. B. West.A quantitative, theoretical f
 
 ```r
 ?msleep
-```
-
-```
-## starting httpd help server ... done
-```
-
-```r
 getwd()
 ```
 
 ```
-## [1] "C:/Users/Gurshan Rai/OneDrive/Desktop/GitHub/BIS15W2021_GRAI/lab3"
+## [1] "/Users/jmledford/Desktop/BIS15W2021_GRAI/lab3"
 ```
 
 2. Store these data into a new data frame `sleep`.
@@ -51,17 +44,17 @@ sleep
 ## # A tibble: 83 x 11
 ##    name  genus vore  order conservation sleep_total sleep_rem sleep_cycle awake
 ##    <chr> <chr> <chr> <chr> <chr>              <dbl>     <dbl>       <dbl> <dbl>
-##  1 Chee~ Acin~ carni Carn~ lc                  12.1      NA        NA      11.9
-##  2 Owl ~ Aotus omni  Prim~ <NA>                17         1.8      NA       7  
-##  3 Moun~ Aplo~ herbi Rode~ nt                  14.4       2.4      NA       9.6
-##  4 Grea~ Blar~ omni  Sori~ lc                  14.9       2.3       0.133   9.1
-##  5 Cow   Bos   herbi Arti~ domesticated         4         0.7       0.667  20  
-##  6 Thre~ Brad~ herbi Pilo~ <NA>                14.4       2.2       0.767   9.6
-##  7 Nort~ Call~ carni Carn~ vu                   8.7       1.4       0.383  15.3
-##  8 Vesp~ Calo~ <NA>  Rode~ <NA>                 7        NA        NA      17  
-##  9 Dog   Canis carni Carn~ domesticated        10.1       2.9       0.333  13.9
-## 10 Roe ~ Capr~ herbi Arti~ lc                   3        NA        NA      21  
-## # ... with 73 more rows, and 2 more variables: brainwt <dbl>, bodywt <dbl>
+##  1 Chee… Acin… carni Carn… lc                  12.1      NA        NA      11.9
+##  2 Owl … Aotus omni  Prim… <NA>                17         1.8      NA       7  
+##  3 Moun… Aplo… herbi Rode… nt                  14.4       2.4      NA       9.6
+##  4 Grea… Blar… omni  Sori… lc                  14.9       2.3       0.133   9.1
+##  5 Cow   Bos   herbi Arti… domesticated         4         0.7       0.667  20  
+##  6 Thre… Brad… herbi Pilo… <NA>                14.4       2.2       0.767   9.6
+##  7 Nort… Call… carni Carn… vu                   8.7       1.4       0.383  15.3
+##  8 Vesp… Calo… <NA>  Rode… <NA>                 7        NA        NA      17  
+##  9 Dog   Canis carni Carn… domesticated        10.1       2.9       0.333  13.9
+## 10 Roe … Capr… herbi Arti… lc                   3        NA        NA      21  
+## # … with 73 more rows, and 2 more variables: brainwt <dbl>, bodywt <dbl>
 ```
 
 3. What are the dimensions of this data frame (variables and observations)? How do you know? Please show the *code* that you used to determine this below.  
