@@ -1,7 +1,7 @@
 ---
 title: "Lab 6 Homework"
 author: "Gurshan"
-date: "2021-01-24"
+date: "2021-01-27"
 output:
   html_document: 
     theme: spacelab
@@ -439,6 +439,7 @@ catch_stats %>%
 ## 10 Korea, Republic of            6124     265
 ## # ... with 183 more rows
 ```
+
 
 
 
