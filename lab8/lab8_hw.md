@@ -1,7 +1,7 @@
 ---
 title: "Lab 8 Homework"
 author: "Gurshan Rai"
-date: "2021-02-02"
+date: "2021-02-09"
 output:
   html_document: 
     theme: spacelab
@@ -31,7 +31,7 @@ library(here)
 ```
 
 ```
-## here() starts at C:/Users/Gurshan Rai/OneDrive/Desktop/GitHub/BIS15W2021_GRAI
+## here() starts at D:/TA files/Winter2021 BIS15L/students_rep/BIS15W2021_GRAI
 ```
 
 ## Data
