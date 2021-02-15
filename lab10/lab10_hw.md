@@ -1,7 +1,7 @@
 ---
 title: "Lab 10 Homework"
 author: "Gurshan Rai"
-date: "2021-02-10"
+date: "2021-02-15"
 output:
   html_document: 
     theme: spacelab
@@ -267,6 +267,10 @@ deserts %>%
 ```
 
 ![](lab10_hw_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
 
 6. Add another layer to your answer from #4 using `geom_point` to get an idea of how many measurements were taken for each species.
 
@@ -284,7 +288,7 @@ labs(title = "Weight Measurements per Species",x="Species",y="Number of Measurem
 ```
 
 ![](lab10_hw_files/figure-html/unnamed-chunk-13-1.png)<!-- -->
-
+</div>
 
 7. [Dipodomys merriami](https://en.wikipedia.org/wiki/Merriam's_kangaroo_rat) is the most frequently sampled animal in the study. How have the number of observations of this species changed over the years included in the study?
 
@@ -319,6 +323,10 @@ deserts %>%
 ```
 
 ![](lab10_hw_files/figure-html/unnamed-chunk-15-1.png)<!-- -->
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
 
 9. Which two species have, on average, the highest weight? Once you have identified them, make a new column that is a ratio of `weight` to `hindfoot_length`. Make a plot that shows the range of this new ratio and fill by sex.
 
@@ -372,6 +380,7 @@ deserts_ratio %>%
 ```
 
 ![](lab10_hw_files/figure-html/unnamed-chunk-18-1.png)<!-- -->
+</div>
 
 10. Make one plot of your choice! Make sure to include at least two of the aesthetics options you have learned.
 
