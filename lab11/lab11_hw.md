@@ -1,7 +1,7 @@
 ---
 title: "Lab 11 Homework"
 author: "Gurshan Rai"
-date: "2021-02-16"
+date: "2021-02-17"
 output:
   html_document: 
     theme: spacelab
@@ -318,6 +318,10 @@ gapminder_tidyer %>%
 
 ![](lab11_hw_files/figure-html/unnamed-chunk-14-1.png)<!-- -->
 
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
 
 **7. Which countries have had the largest population growth since 1952?**
 
@@ -333,6 +337,7 @@ gapminder_tidyer %>%
 **8. Use your results from the question above to plot population growth for the top five countries since 1952.**
 
 **9. How does per-capita GDP growth compare between these same five countries?**
+</div>
 
 **10. Make one plot of your choice that uses faceting!**
 
