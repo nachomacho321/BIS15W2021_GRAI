@@ -1,7 +1,7 @@
 ---
 title: "Lab 11 Homework"
 author: "Gurshan Rai"
-date: "2021-02-17"
+date: "2021-02-19"
 output:
   html_document: 
     theme: spacelab
@@ -326,18 +326,68 @@ div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
 **7. Which countries have had the largest population growth since 1952?**
 
 ```r
-#gapminder_tidyer %>% 
-#  filter(year==1952 | year ==2007) %>% 
-#  pivot_wider(names_from = year, values_from=pop) %>% 
-#  group_by(country) %>% 
-#  summarise(
+gapminder_wide <- gapminder_tidyer %>%
+  select(country, year, pop) %>% 
+  filter(year==1952 | year==2007) %>% 
+  pivot_wider(names_from = year, 
+              names_prefix = "year_",
+              values_from=pop) %>% 
+  mutate(delta_pop= year_2007-year_1952)
 ```
   
 
+```r
+gapminder_wide %>%
+  select(country, delta_pop) %>% 
+  arrange(desc(delta_pop)) %>% 
+  top_n(delta_pop, n=5)
+```
+
+```
+## # A tibble: 5 x 2
+##   country       delta_pop
+##   <fct>             <int>
+## 1 China         762419569
+## 2 India         738396331
+## 3 United States 143586947
+## 4 Indonesia     141495000
+## 5 Brazil        133408087
+```
+
 **8. Use your results from the question above to plot population growth for the top five countries since 1952.**
+
+```r
+gapminder_tidyer %>% 
+  filter(year>=1952 & year<=2007) %>%
+  filter(country =="China" | country =="India" |country =="United States" |country =="Indonesia" |country =="Brazil") %>% 
+  ggplot(aes(x=year, y=pop/1000000))+
+  geom_line(group=1)+
+  facet_wrap(~country)+
+  theme_clean()+
+  labs(title="Population Growth Between 1952 and 2007 of the Five Fastest Growing Countries",
+       x=NULL,
+       y="Population(millions)")
+```
+
+![](lab11_hw_files/figure-html/unnamed-chunk-17-1.png)<!-- -->
 
 **9. How does per-capita GDP growth compare between these same five countries?**
 </div>
+
+```r
+gapminder_tidyer %>% 
+  filter(year>=1952 & year<=2007) %>%
+  filter(country =="China" | country =="India" |country =="United States" |country =="Indonesia" |country =="Brazil") %>% 
+  ggplot(aes(x=year, y=gdp_percap, color=country, group=country))+
+  geom_line()+
+  geom_point()+
+  theme_clean()+
+  labs(title="GDP Growth Between 1952 and 2007 of the Five Fastest Growing Countries",
+       x=NULL,
+       y="GDP Per Person")
+```
+
+![](lab11_hw_files/figure-html/unnamed-chunk-18-1.png)<!-- -->
 
 **10. Make one plot of your choice that uses faceting!**
 
@@ -359,7 +409,7 @@ gapminder_tidyer %>%
 ## `geom_smooth()` using formula 'y ~ x'
 ```
 
-![](lab11_hw_files/figure-html/unnamed-chunk-16-1.png)<!-- -->
+![](lab11_hw_files/figure-html/unnamed-chunk-19-1.png)<!-- -->
 
 ## Push your final code to GitHub!
 Please be sure that you check the `keep md` file in the knit preferences. 

@@ -180,21 +180,51 @@ div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
 
 **7. Which countries have had the largest population growth since 1952?**
 ```{r}
-#gapminder_tidyer %>% 
-#  filter(year==1952 | year ==2007) %>% 
-#  pivot_wider(names_from = year, values_from=pop) %>% 
-#  group_by(country) %>% 
-#  summarise(
+gapminder_wide <- gapminder_tidyer %>%
+  select(country, year, pop) %>% 
+  filter(year==1952 | year==2007) %>% 
+  pivot_wider(names_from = year, 
+              names_prefix = "year_",
+              values_from=pop) %>% 
+  mutate(delta_pop= year_2007-year_1952)
 
-
-            
 ```
   
+```{r}
+gapminder_wide %>%
+  select(country, delta_pop) %>% 
+  arrange(desc(delta_pop)) %>% 
+  top_n(delta_pop, n=5)
+```
 
 **8. Use your results from the question above to plot population growth for the top five countries since 1952.**
+```{r}
+gapminder_tidyer %>% 
+  filter(year>=1952 & year<=2007) %>%
+  filter(country =="China" | country =="India" |country =="United States" |country =="Indonesia" |country =="Brazil") %>% 
+  ggplot(aes(x=year, y=pop/1000000))+
+  geom_line(group=1)+
+  facet_wrap(~country)+
+  theme_clean()+
+  labs(title="Population Growth Between 1952 and 2007 of the Five Fastest Growing Countries",
+       x=NULL,
+       y="Population(millions)")
+```
 
 **9. How does per-capita GDP growth compare between these same five countries?**
 </div>
+```{r}
+gapminder_tidyer %>% 
+  filter(year>=1952 & year<=2007) %>%
+  filter(country =="China" | country =="India" |country =="United States" |country =="Indonesia" |country =="Brazil") %>% 
+  ggplot(aes(x=year, y=gdp_percap, color=country, group=country))+
+  geom_line()+
+  geom_point()+
+  theme_clean()+
+  labs(title="GDP Growth Between 1952 and 2007 of the Five Fastest Growing Countries",
+       x=NULL,
+       y="GDP Per Person")
+```
 
 **10. Make one plot of your choice that uses faceting!**
 ```{r}
