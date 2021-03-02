@@ -32,6 +32,8 @@ If you completed part 1 of today's lab then you should have the following packag
 `albersusa`
 ```{r, message = FALSE}
 #install.packages("albersusa")
+#devtools::install_github("hrbrmstr/albersusa")
+
 ```
 
 ## Load the libraries
@@ -91,11 +93,12 @@ ggmap(map1) +
 ## Practice
 1. Map the spider locations with a different type of base map. Try to adjust the map using different aesthetics including `size`, `color`, and `alpha`.
 ```{r}
-
+#map1 <- get_map(bbox, maptype = "terrain", source = "stamen")
+map2 <- get_map(bbox, maptype="watercolor", source="stamen")
 ```
 
 ```{r}
-
+ggmap(map2)
 ```
 
 ## Albers USA
@@ -150,6 +153,8 @@ ggplot() +
 
 We can spice things up a bit by adding aesthetics.
 ```{r}
+#install.packages("svglite")
+library(svglite)
 ggplot() +
   geom_sf(data = ca_comp, size = 0.125)+
   geom_sf(data = ca_cnty_comp, size = 0.125)+
@@ -162,13 +167,15 @@ ggplot() +
   theme(panel.grid = element_blank()) +
   theme(legend.position = c(0.9, 0.3)) -> uso_map
 
-ggsave(filename = "map.svg", device = "svg", plot = uso_map, height = 5, width = 7)
+ggsave(filename = "map.pdf", device = "pdf", plot = uso_map, height = 5, width = 7)
 ```
 
 ## Practice
 1. Make a new new column that labels each specimen as occuring in a cave or on the surface. The word "Cave" is part of the locality information.
 ```{r}
-
+spiders <- spiders %>% 
+  mutate(troglo=if_else(str_detect(locality, "Cave"), "troglo", "epig"))
+spiders
 ```
 
 2. Now adjust the plot abot to give a different color for specimens that occur in caves.
